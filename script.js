@@ -163,20 +163,73 @@ console.log(filterpeople);
 // Arrow Functions (ES6):
 
 // Rewrite a given function expression using arrow function syntax.
+const filterarray = (arr)=>arr.filter(num => num % 2 === 0);
+const number = [1,2,3,4,5,6,7,8,9,10]
+const evennumbers = filterarray(number);
+
+console.log(evennumbers);
 // Use arrow functions to refactor a callback function used in the Array.map() method.
+
+const numbers1 = [1,2,3,4,5]
+const doublenumber = numbers1.map (num => num * 2)
+
+console.log(doublenumber);
 // Implement a function that takes an array of numbers and returns a new array containing their squares using arrow functions.
+
+const squarenumber = (arr) => arr.map(num => num * num);
+const number2 = [1,2,3,4,5,6,7,8,9];
+const sqaurenumber = squarenumber(number2);
+console.log(sqaurenumber);
 
 // Immediately Invoked Function Expressions (IIFE):
 
 // Create an IIFE to initialize and populate an array with random numbers.
+
+const randomnumber = (() => {
+    const array= []
+    const min =1;
+    const max =100;
+    const count =10;
+
+    for (let i=0; i<count; i++){
+        const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        array.push(randomnumber);
+    }
+    return array;
+})();
+
+console.log(randomnumber);
+
+
+const randomnumber1 =(() =>{
+    const array= [];
+    const min =1;
+    const max =1000;
+    const number = 99;
+
+    for(let i =0; i<number; i++){
+        const randomnumber1 =Math.floor(Math.random() * (max-min + 1)) + min;
+        array.push(randomnumber1)
+    }
+    return array;
+})();
+
+console.log(randomnumber1);
 // Implement an IIFE to manage a counter that increments every second.
+(()=>{
+    let counter =0;
+    const incrementcounter=()=>{
+        counter++
+        console.log("counter", counter);
+    };
+    setInterval(incrementcounter,1000);
+})();
 // Use an IIFE to encapsulate code that needs to run immediately but should not affect the global scope.
 
-// Generator Functions (ES6):
-
-// Write a generator function that generates the Fibonacci sequence up to a given number of terms.
-// Implement a generator function that yields random numbers within a specified range.
-// // Create a generator function that iterates over the characters of a given string.
+(()=>{
+    const secreatemessage = "This message is encapsulated within an IIFE"
+    console.log(secreatemessage);
+})();
 
 // Constructor Functions:
 
